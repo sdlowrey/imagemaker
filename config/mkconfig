@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ARCHIVE=config.tar
+COMMON_TREES="boot etc root"
+
+tar -C common --create --file=$ARCHIVE $COMMON_TREES .autorelabel
+
+# TODO: handle other distros and releases
+
+CENTOS_5_TREES="etc"
+tar -C centos-5 --append --file=$ARCHIVE $CENTOS_5_TREES
